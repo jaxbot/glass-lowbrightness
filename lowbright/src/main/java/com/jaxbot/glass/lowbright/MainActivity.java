@@ -13,14 +13,13 @@ import android.util.Log;
 
 import java.util.ArrayList;
 
-import com.google.android.glass.app.Card;
+import android.provider.*;
 
 public class MainActivity extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-
 	}
 
 	@Override
@@ -28,19 +27,20 @@ public class MainActivity extends Activity {
 		super.onResume();
 
 		ArrayList<String> voiceResults = getIntent().getExtras()
-		.getStringArrayList(RecognizerIntent.EXTRA_RESULTS);
+			.getStringArrayList(RecognizerIntent.EXTRA_RESULTS);
 
 		Log.d("Got:", voiceResults.get(0));
 
+		int brightness = 50;
+		int mode = 1;
+
 		if (voiceResults.get(0).equals("on")) {
-			android.provider.Settings.System.putInt(getContentResolver(), 
-				"screen_brightness_mode", 0);
-			android.provider.Settings.System.putInt(getContentResolver(), 
-				android.provider.Settings.System.SCREEN_BRIGHTNESS, 0);
-		} else {
-			android.provider.Settings.System.putInt(getContentResolver(), 
-				"screen_brightness_mode", 1);
+			mode = 0;
+			brightness = 0;
 		}
+
+		Settings.System.putInt(getContentResolver(), "screen_brightness_mode", mode);
+		Settings.System.putInt(getContentResolver(), Settings.System.SCREEN_BRIGHTNESS, brightness);
 
 		finish();
 	}
