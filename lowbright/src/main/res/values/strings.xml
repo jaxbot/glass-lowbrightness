@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name">Low Bright Mode</string>
+	<string name="glass_voice_trigger">low brightness mode</string>
+	<string name="onoff">Turn on or off?</string>
+</resources>
