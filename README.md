@@ -18,3 +18,12 @@ You won't be able to see the viewfinder well (or at all), but you can check the 
 
 Results are inconclusive right now, but it seems reasonable to save battery.
 
+## Shameless plug
+
+I develop Glass stuff. Follow me on [Github](https://github.com/jaxbot) for more goodies, or check out my site [OkaySass](http://okaysass.com/).
+
+### Other Glass stuff
+
+[Google Glass development resources](http://jaxbot.me/glassdev)
+
+[My other Glass projects](https://github.com/search?q=%40jaxbot+glass)
